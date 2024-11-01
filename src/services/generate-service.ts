@@ -17,7 +17,7 @@ class GenerateService {
 
     const validCombinations: string[][] = [];
 
-    function findCombinations(start: number, combo: string[]) {
+    const findCombinations = (start: number, combo: string[]) => {
       if (combo.length === length) {
         validCombinations.push([...combo]);
         return;
@@ -31,10 +31,11 @@ class GenerateService {
           combo.pop();
         }
       }
-    }
+    };
 
     findCombinations(0, []);
-    return { combinations: validCombinations, itemNames: arr };
+
+    return { combinations: validCombinations, itemNames: items };
   }
 }
 export const generateService = new GenerateService();
