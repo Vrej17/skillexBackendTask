@@ -7,12 +7,12 @@ import generateRoute from "./routes/generate-routes";
 dotenv.config();
 
 const app = express();
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-const port = process.env.PORT;
 
 app.use('/api',generateRoute)
 
